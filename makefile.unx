@@ -22,15 +22,15 @@ INCDIR=..
 IBOPT= -c
 
 CC=	cc
-CFLAGS=	-I$(INCDIR) -I$(INCDIR)/huskylib
+CFLAGS=	-I$(INCDIR)
 CDEFS=	-DUNIX -DUSE_MSGAPI -DUNAME=\"UNX\" -DREADMAPSDAT='"$(READMAPS)"' -DWRITMAPSDAT='"$(WRITMAPS)"' -DDEFAULT_CONFIG_FILE='"$(DEFAULT_CONFIG_FILE)"'
 COPT=	-O3
-LFLAGS= -L../smapi -L../huskylib 
+LFLAGS= LFLAGS= -L../smapi -L../fidoconfig
 
 TARGET=	msged
-MSGAPI=-lsmapiunix -lhuskylib
+MSGAPI=-lsmapiunix
 TERMCAP=-lcurses
-#termcap
+#TERMCAP=-termcap
 
 objs=   addr.o     \
 	ansi.o     \

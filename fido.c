@@ -25,7 +25,7 @@
 #include <string.h>
 #include <time.h>
 #include <errno.h>
-#include <huskylib/huskylib.h>
+#include <smapi/progprot.h>
 #include <smapi/msgapi.h>
 #include <assert.h>
 #include "addr.h"
@@ -86,7 +86,7 @@ int sopen(char *filename, unsigned int access, int flags,...);
 
 #include <io.h>
 #include <sys/types.h>
-#include <sys/stat.h>		
+#include <sys/stat.h>
 #include <share.h>
 #include <fcntl.h>
 
