@@ -24,10 +24,17 @@
 #include <io.h>
 #endif
 
-#include <huskylib/compiler.h>
+#include <smapi/compiler.h>
 
-#if defined(UNIX) || defined(__EMX__) || defined(__DJGPP__)
+#ifndef HAVE_POPEN
+#if defined(UNIX) || defined(__EMX__) || defined(__DJGPP__) || defined(__MINGW32__)
 #define HAVE_POPEN
+#endif
+
+#if defined(_MSC_VER)
+#define HAVE_POPEN
+#define popen(x,y) _popen(x,y)
+#endif
 #endif
 
 #ifdef __MINGW32__
