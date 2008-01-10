@@ -16,7 +16,7 @@
 #include <stat.h>
 #endif
 #include <assert.h>
-#include <huskylib/compiler.h>
+#include <smapi/compiler.h>
 #include "addr.h"
 #include "nedit.h"
 #include "msged.h"
@@ -911,7 +911,7 @@ char *QuickMsgReadText(unsigned long n)
             memset(&text, 0, sizeof text);
             if (read_qtext(textfp, &text) == 1)
             {
-                if (text.length > sizeof text.text)
+                if (text.length > sizeof text.text) /* always false! */
                 {
                     text.length = sizeof text.text;
                 }
